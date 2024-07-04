@@ -60,12 +60,15 @@
 }
 
 .profile__description {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   grid-area: description;
-  margin: 0;
+  margin: 7px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__image {
@@ -108,5 +111,10 @@
   .profile__image {
     max-height: 120px;
     max-width: 120px;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
