@@ -6,4 +6,4 @@ This project is a responsive web application that allows users to create and edi
 The application is built using CSS and html.
 The application is responsive and works on different devices.
 
-[Github Link] https://github.com/ExtropramorfusANT/se_project_aroundtheus
+[Github Link] https://extropramorfusant.github.io/se_project_aroundtheus/
