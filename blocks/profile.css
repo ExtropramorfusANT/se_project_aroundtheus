@@ -1,6 +1,7 @@
 .profile {
   display: flex;
   padding-top: 40px;
+  padding-bottom: 51px;
   align-items: center;
   margin-top: 0;
 }
@@ -12,6 +13,7 @@
     "description description";
   grid-template-columns: minmax(auto, 375px) auto;
   align-items: center;
+  margin: 0;
 }
 
 .profile__edit-button {
@@ -93,10 +95,11 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 580px) {
   .profile {
     flex-direction: column;
     align-self: center;
+    padding-bottom: 36px;
   }
 
   .profile__info {
@@ -104,15 +107,16 @@
     text-align: center;
     font-size: 22px;
     line-height: 27px;
-    margin: 30px 0 36px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    grid-gap: 7px 17px;
   }
 
   .profile__title {
     font-size: 22px;
     line-height: 27px;
+    max-width: 196px;
   }
 
   .profile__add-button {
