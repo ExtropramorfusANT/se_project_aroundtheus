@@ -116,16 +116,18 @@
       </footer>
     </div>
 
-    <div class="modal">
+    <div class="modal modal_opened">
       <div class="modal_container">
         <button class="modal_close"></button>
+        <p class="modal_heading">
+          <span style="color: black">Edit Profile</span>
+        </p>
         <form class="modal_form">
-          <p class="modal_heading">
-            <span style="color: black">Edit Profile</span>
-          </p>
-          <input type="text" name="title" />
-          <input type="text" name="description" />
-          <button class="modal_button">Save</button>
+          <input type="text" class="modal__input" name="title" />
+          <input type="text" class="modal__input" name="description" />
+
+          <!-- <button class="modal_button">Save</button> -->
+          <button class="button modal__button" type="submit">Save</button>
         </form>
       </div>
     </div>
