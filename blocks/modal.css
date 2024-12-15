@@ -91,3 +91,10 @@
 
 @media screen and (max-width: 722px) {
 }
+
+@media screen and (max-width: 580px) {
+  .modal__close {
+    left: unset;
+    right: 0px;
+  }
+}

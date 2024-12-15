@@ -39,77 +39,8 @@
         <!--card wrapper for indiv. cards below-->
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/yosemite-valley-1.jpg"
-                alt="Yosemite Valley"
-                class="card__image"
-              />
               <!--start of card section-->
-              <div class="card__description">
-                <h2 class="card__title">Yosemite Valley</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
 
-            <li class="card">
-              <img
-                src="./images/lake-louise.png"
-                alt="lake louise"
-                class="card__image"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lake Louis</h2>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/bald-mountains.png"
-                alt="Bald Mountains"
-                class="card__image"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Bald Mountains</h2>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/latemar.png"
-                alt="Latemar"
-                class="card__image"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Latemar</h2>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/vanoise-national-park.png"
-                alt="Vanoise National Park"
-                class="card__image"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Vanoise National Park</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/lago-di-braies.png"
-                alt="Lago Di Braise"
-                class="card__image"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lago Di Braise</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
               <!--end of card section-->
             </li>
           </ul>
@@ -127,8 +58,20 @@
           <span style="color: black">Edit Profile</span>
         </p>
         <form class="modal__form">
-          <input type="text" class="modal__input" name="title" />
-          <input type="text" class="modal__input" name="description" />
+          <input
+            type="text"
+            class="modal__input"
+            name="title"
+            placeholder="Title"
+            id="profile-title-input"
+          />
+          <input
+            type="text"
+            class="modal__input"
+            name="description"
+            placeholder="Description"
+            id="profile-desc-input"
+          />
 
           <!-- <button class="modal_button">Save</button> -->
           <button class="button modal__button" type="submit">Save</button>
@@ -136,6 +79,20 @@
       </div>
     </div>
 
+    <template id="card-template">
+      <li class="card">
+        <img
+          src=""
+          alt=""
+          class="card__image"
+        />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button"></button>
+        </div>
+      </li>
+
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
