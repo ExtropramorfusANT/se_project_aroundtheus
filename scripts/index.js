@@ -53,7 +53,7 @@ function getCardElement(cardData) {
 }
 
 function closeModal() {
-  profileEditModal.classList.remove("modal_open");
+  profileEditModal.classList.remove("modal_opened");
 }
 
 //Event handler
