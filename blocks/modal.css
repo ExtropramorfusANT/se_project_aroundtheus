@@ -89,12 +89,23 @@
   font-family: "inter", sans-serif;
 }
 
-@media screen and (max-width: 722px) {
-}
-
 @media screen and (max-width: 580px) {
   .modal__close {
     left: unset;
     right: 0px;
+    bottom: calc(100% + 19px);
+    width: 26px;
+    height: 26px;
+  }
+
+  .modal__heading {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 0px;
+  }
+
+  .modal__button {
+    font-size: 14px;
+    font-weight: 400px;
   }
 }
