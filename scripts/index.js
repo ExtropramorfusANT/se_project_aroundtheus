@@ -61,7 +61,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDesc.textContent = profileDescInput.value;
-  closeModal();
+  closeModal(profileEditModal);
 }
 //Event listener
 profileEditBtn.addEventListener("click", () => {
