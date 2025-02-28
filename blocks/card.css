@@ -45,3 +45,7 @@
   opacity: 50%;
   cursor: pointer;
 }
+
+.card__like-button:active {
+  background: transparent url(../images/Union.svg) center no-repeat;
+}
