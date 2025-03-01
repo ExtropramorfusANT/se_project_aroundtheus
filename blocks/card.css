@@ -4,6 +4,7 @@
   list-style: none;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .card__title {
@@ -46,6 +47,17 @@
   cursor: pointer;
 }
 
-.card__like-button:active {
+.card__like-button_active {
   background: transparent url(../images/Union.svg) center no-repeat;
+}
+
+.card__delete-button {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  width: 18px;
+  height: 19px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 249px;
 }
