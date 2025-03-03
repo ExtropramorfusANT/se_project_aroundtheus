@@ -23,6 +23,10 @@
   width: 282px;
 }
 
+.card__image_opened {
+  display: flex;
+}
+
 .card__description {
   font-family: "Inter", sans-serif;
   display: flex;

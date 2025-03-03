@@ -40,6 +40,7 @@ const addCardFormElement = addCardModal.querySelector(".modal__form");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardCloseBtn = addCardModal.querySelector("#add-card-close-modal");
 const likeButton = document.querySelector(".card__like-button");
+const cardImageOpened = document.querySelector(".card__image");
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -49,8 +50,10 @@ const cardListEl = document.querySelector(".cards__list");
 /*Function*/
 
 function getCardElement(cardData) {
+  //e.preventDefault();
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
+
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
