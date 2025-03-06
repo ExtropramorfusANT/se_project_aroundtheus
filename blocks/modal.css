@@ -6,8 +6,6 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  /*display: flex;*/
-  padding: 0 19px;
   display: none;
 }
 
@@ -22,7 +20,6 @@
   margin: auto;
   border-radius: 10px;
   position: relative;
-  /*vertical-align: baseline;*/
 }
 
 .input_form {
@@ -87,6 +84,30 @@
   font-size: 24px;
   line-height: 30px;
   font-family: "inter", sans-serif;
+}
+
+.modal__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image_modal_opened {
+  display: flex;
+  background-color: transparent; /* Remove white background */
+  padding: 0; /* Remove padding */
+  max-width: 90%;
+  max-height: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px; /* Optional: Add rounded corners to the image */
+  visibility: hidden;
 }
 
 @media screen and (max-width: 580px) {

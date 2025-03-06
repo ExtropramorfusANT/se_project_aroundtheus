@@ -66,6 +66,13 @@ function getCardElement(cardData) {
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
+  cardImage.addEventListener("click", () => {
+    openImageModal(cardData.link, cardData.name);
+  });
+  imageCloseBtn.addEventListener("click", () => {
+    imageCloseBtn.classList.remove("#image-modal_opened");
+    imageModal.classList.remove("modal_opened");
+  });
   return cardElement;
 }
 
@@ -88,16 +95,12 @@ const modalImageDescription = document.querySelector(
   "#modal-image-description"
 );
 
-//function openImageModal(link, name) {
-//modalImage.src = link;
-//modalImage.alt = name;
-//modalImageDescription.textContent = name;
-//imageModal.classList.add("modal_opened");
-//}
-
-//imageCloseBtn.addEventListener("click", () => {
-//closeModal(imageModal);
-//});
+function openImageModal(link, name) {
+  modalImage.src = link;
+  modalImage.alt = name;
+  imageModal.classList.add("image_modal_opened");
+  console.log("clicked");
+}
 
 //Event handler
 function handleProfileEditSubmit(e) {
