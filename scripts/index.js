@@ -85,7 +85,8 @@ function closeModal() {
   profileEditModal.classList.remove("modal_opened");
 }
 
-const imageModal = document.querySelector("modal__close");
+const imageModal = document.querySelector("#image-modal");
+const imageCloseBtn = document.querySelector("modal__close");
 const modalImage = document.querySelector("#modal-image");
 const modalImageDescription = document.querySelector(
   "#modal-image-description"
@@ -150,7 +151,6 @@ profileCloseBtn.addEventListener("click", () => {
   profileEditModal.classList.remove("modal_opened");
 });
 imageCloseBtn.addEventListener("click", () => {
-  imageCloseBtn.classList.remove("#image-modal_opened");
   imageModal.classList.remove("modal_opened");
 });
 
