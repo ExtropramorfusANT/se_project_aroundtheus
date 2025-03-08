@@ -69,10 +69,7 @@ function getCardElement(cardData) {
   cardImage.addEventListener("click", () => {
     openImageModal(cardData.link, cardData.name);
   });
-  imageCloseBtn.addEventListener("click", () => {
-    imageCloseBtn.classList.remove("#image-modal_opened");
-    imageModal.classList.remove("modal_opened");
-  });
+
   return cardElement;
 }
 
@@ -88,8 +85,7 @@ function closeModal() {
   profileEditModal.classList.remove("modal_opened");
 }
 
-const imageModal = document.querySelector("#image-modal");
-const imageCloseBtn = document.querySelector("#image-close-modal");
+const imageModal = document.querySelector("modal__close");
 const modalImage = document.querySelector("#modal-image");
 const modalImageDescription = document.querySelector(
   "#modal-image-description"
@@ -98,7 +94,7 @@ const modalImageDescription = document.querySelector(
 function openImageModal(link, name) {
   modalImage.src = link;
   modalImage.alt = name;
-  imageModal.classList.add("image_modal_opened");
+  imageModal.classList.add("modal_opened");
   console.log("clicked");
 }
 
@@ -152,6 +148,10 @@ profileEditBtn.addEventListener("click", () => {
 
 profileCloseBtn.addEventListener("click", () => {
   profileEditModal.classList.remove("modal_opened");
+});
+imageCloseBtn.addEventListener("click", () => {
+  imageCloseBtn.classList.remove("#image-modal_opened");
+  imageModal.classList.remove("modal_opened");
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);

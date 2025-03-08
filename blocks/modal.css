@@ -110,6 +110,17 @@
   visibility: hidden;
 }
 
+.image-modal__container {
+  max-width: 75vw;
+  max-height: 75vh;
+  height: auto;
+  width: auto;
+  display: flex;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 580px) {
   .modal__close {
     left: unset;
