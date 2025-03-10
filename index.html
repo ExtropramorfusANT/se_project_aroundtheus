@@ -34,7 +34,11 @@
             ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button type="button" class="profile__add-button" id="add-card-button"></button>
+          <button
+            type="button"
+            class="profile__add-button"
+            id="add-card-button"
+          ></button>
         </section>
         <!--card wrapper for indiv. cards below-->
         <section class="cards page__section">
@@ -97,9 +101,18 @@
             placeholder="Image link"
             id="card-link-input"
           />
-          <button class="button modal__button" type="submit" id="modal-submit-button">Create</button>
-        <img src="" alt="" class="modal__image" />
-        <p class="modal__image-description"></p>
+
+          <button
+            class="button modal__button"
+            type="submit"
+            id="modal-submit-button"
+          >
+            Create
+          </button>
+
+          <img src="" alt="" class="modal__image" />
+          <p class="modal__image-description"></p>
+        </form>
       </div>
     </div>
     <!--card modal for upscale-->
@@ -107,7 +120,6 @@
       <div class="modal__container image-modal__container">
         <button class="modal__close" id="image-close-modal"></button>
         <img src="" alt="" class="modal__image" id="modal-image" />
-        
       </div>
     </div>
     <!--reg. card templ.-->
@@ -117,7 +129,7 @@
         <button class="card__delete-button"></button>
         <div class="card__description">
           <h2 class="card__title"></h2>
-          <button class="card__like-button"></button>       
+          <button class="card__like-button"></button>
         </div>
       </li>
     </template>

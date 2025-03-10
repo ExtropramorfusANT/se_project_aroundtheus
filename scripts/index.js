@@ -41,7 +41,7 @@ const addCardButton = document.querySelector("#add-card-button");
 const addCardCloseBtn = addCardModal.querySelector("#add-card-close-modal");
 const likeButton = document.querySelector(".card__like-button");
 const cardImageOpened = document.querySelector(".card__image");
-
+const addCardForm = document.querySelector("#add-card-modal");
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -86,7 +86,7 @@ function closeModal() {
 }
 
 const imageModal = document.querySelector("#image-modal");
-const imageCloseBtn = document.querySelector("modal__close");
+const imageCloseBtn = document.querySelector(".modal__close");
 const modalImage = document.querySelector("#modal-image");
 const modalImageDescription = document.querySelector(
   "#modal-image-description"
@@ -110,27 +110,23 @@ function handleProfileEditSubmit(e) {
   closeModal(profileEditModal);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const addCardForm = document.querySelector("#add-card-modal .modal__form");
+addCardForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-  addCardForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  const titleInput = document.querySelector("#card-title-input").value;
+  const linkInput = document.querySelector("#card-link-input").value;
 
-    const titleInput = document.querySelector("#card-title-input").value;
-    const linkInput = document.querySelector("#card-link-input").value;
+  const cardData = {
+    name: titleInput,
+    link: linkInput,
+  };
 
-    const cardData = {
-      name: titleInput,
-      link: linkInput,
-    };
+  const newCard = getCardElement(cardData);
+  cardListEl.appendChild(newCard);
 
-    const newCard = getCardElement(cardData);
-    cardListEl.appendChild(newCard);
-
-    // Reset the form
-    addCardForm.reset();
-    addCardModal.classList.remove("modal_opened");
-  });
+  // Reset the form
+  addCardForm.reset();
+  addCardModal.classList.remove("modal_opened");
 });
 
 addCardButton.addEventListener("click", () => {
