@@ -10,8 +10,10 @@
 .card__title {
   font-family: "Inter", sans-serif;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 23.5px;
   line-height: 29px;
+  max-width: 222px;
+  padding-left: 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -32,7 +34,8 @@
   display: flex;
   background: white;
   color: black;
-  padding: 25px 20px 25px 20px;
+  padding: 25px 15px 25px 20px;
+
   align-items: center;
   justify-content: space-between;
   margin: 0;

@@ -29,8 +29,8 @@ const initialCards = [
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileCloseBtn = document.querySelector("#profile-close-modal");
-const profileTitle = document.querySelector(".profile__title");
-const profileDesc = document.querySelector(".profile__description");
+const profileTitle = document.querySelector("#profile-title");
+const profileDesc = document.querySelector(".profile__description"); // use id
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescInput = document.querySelector("#profile-desc-input");
 const editProfileModal = document.querySelector("#profile-edit-modal");
@@ -39,8 +39,6 @@ const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardCloseBtn = addCardModal.querySelector("#add-card-close-modal");
-const likeButton = document.querySelector(".card__like-button");
-const cardImageOpened = document.querySelector(".card__image");
 const addCardForm = document.querySelector("#add-card-modal");
 const cardTemplate = document
   .querySelector("#card-template")
@@ -86,15 +84,14 @@ function closeModal() {
 }
 
 const imageModal = document.querySelector("#image-modal");
-const imageCloseBtn = document.querySelector(".modal__close");
-const modalImage = document.querySelector("#modal-image");
-const modalImageDescription = document.querySelector(
-  "#modal-image-description"
-);
+const imageCloseBtn = imageModal.querySelector(".modal__close");
+const modalImage = imageModal.querySelector("#modal-image");
+const modalImageDescription = imageModal.querySelector("#modal-caption");
 
 function openImageModal(link, name) {
   modalImage.src = link;
   modalImage.alt = name;
+  modalImageDescription.textContent = name;
   imageModal.classList.add("modal_opened");
   console.log("clicked");
 }
@@ -102,8 +99,6 @@ function openImageModal(link, name) {
 //Event handler
 function handleProfileEditSubmit(e) {
   e.preventDefault();
-  const profileTitle = cardTitleInput.value;
-  const profileDesc = cardUrlInput.value;
   // Update the profile title and description
   profileTitle.textContent = profileTitleInput.value;
   profileDesc.textContent = profileDescInput.value;
