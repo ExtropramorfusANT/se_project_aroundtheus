@@ -39,7 +39,7 @@ const addCardModal = document.querySelector("#add-card-modal");
 const addCardFormElement = addCardModal.querySelector(".modal__form");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardCloseBtn = addCardModal.querySelector("#add-card-close-modal");
-const addCardForm = document.querySelector("#add-card-modal");
+const addCardForm = document.querySelector("#add-card-form");
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -93,7 +93,6 @@ function openImageModal(link, name) {
   modalImage.alt = name;
   modalImageDescription.textContent = name;
   imageModal.classList.add("modal_opened");
-  console.log("clicked");
 }
 
 //Event handler
@@ -117,7 +116,7 @@ addCardForm.addEventListener("submit", (event) => {
   };
 
   const newCard = getCardElement(cardData);
-  cardListEl.appendChild(newCard);
+  cardListEl.prepend(newCard);
 
   // Reset the form
   addCardForm.reset();
@@ -149,5 +148,5 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
-  cardListEl.append(cardElement);
+  cardListEl.prepend(cardElement);
 });

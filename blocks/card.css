@@ -25,6 +25,10 @@
   width: 282px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__image_opened {
   display: flex;
 }
