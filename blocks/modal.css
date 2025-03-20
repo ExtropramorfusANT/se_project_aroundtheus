@@ -139,4 +139,13 @@
 
   .modal {
   }
+
+  .modal__title {
+    padding-bottom: 66px;
+  }
+
+  .modal__container {
+    max-width: 322px;
+    padding: 25px 25px;
+  }
 }

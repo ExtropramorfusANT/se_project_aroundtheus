@@ -40,7 +40,6 @@ const addCardFormElement = addCardModal.querySelector(".modal__form");
 const addCardButton = document.querySelector("#add-card-button");
 const addCardCloseBtn = addCardModal.querySelector("#add-card-close-modal");
 const addCardForm = document.querySelector("#add-card-form");
-//Added query selector to card temp. why? -- I was told to. Cards won't enlarge. Where these 2 originate, check lines 144-115
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -51,7 +50,6 @@ const cardListEl = document.querySelector(".cards__list");
 /*Function*/
 
 function getCardElement(cardData) {
-  //e.preventDefault();
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
 
