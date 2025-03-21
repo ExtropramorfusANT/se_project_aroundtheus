@@ -22,7 +22,7 @@
 .modal__container {
   width: 430px;
   box-sizing: border-box;
-  padding: 25px 22px;
+  padding: 34px 36px;
   background-color: white;
   margin: auto;
   border-radius: 10px;
@@ -33,7 +33,7 @@
   margin: 0;
 }
 
-.input_form {
+.modal_form {
   padding-top: 54px;
   padding-bottom: 48px;
   display: flex;

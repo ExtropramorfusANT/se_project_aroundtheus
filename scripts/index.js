@@ -106,7 +106,7 @@ function handleProfileEditSubmit(e) {
   // Update the profile title and description
   profileTitle.textContent = profileTitleInput.value;
   profileDesc.textContent = profileDescInput.value;
-  closeModal(profileEditModal);
+  closePopup(profileEditModal);
 }
 
 addCardForm.addEventListener("submit", (event) => {
