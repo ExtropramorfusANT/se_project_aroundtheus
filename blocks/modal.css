@@ -35,7 +35,6 @@
 
 .modal__form {
   padding-top: 54px;
-  padding-bottom: 48px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -107,16 +106,6 @@
   background: transparent;
 }
 
-.image-modal__container {
-  max-width: 75vw;
-  max-height: 75vh;
-  height: auto;
-  width: auto;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-}
-
 @media screen and (max-width: 580px) {
   .modal__close {
     left: unset;
@@ -141,11 +130,18 @@
   }
 
   .modal__title {
-    padding-bottom: 66px;
+    margin-bottom: 38px;
   }
 
   .modal__container {
     max-width: 322px;
     padding: 25px 25px;
+  }
+
+  .modal__form {
+    margin-top: 38px;
+  }
+
+  .modal__input {
   }
 }

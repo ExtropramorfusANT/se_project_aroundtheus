@@ -122,11 +122,11 @@ addCardForm.addEventListener("submit", (event) => {
 
   // Reset the form
   addCardForm.reset();
-  addCardModal.classList.remove("modal_opened");
+  closePopup(addCardModal);
 });
 
 addCardButton.addEventListener("click", () => {
-  addCardModal.classList.add("modal_opened");
+  openPopup(addCardModal);
 });
 
 addCardCloseBtn.addEventListener("click", () => {
