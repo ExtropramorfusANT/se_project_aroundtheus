@@ -130,20 +130,20 @@ addCardButton.addEventListener("click", () => {
 });
 
 addCardCloseBtn.addEventListener("click", () => {
-  addCardModal.classList.remove("modal_opened");
+  closePopup(addCardModal);
 });
 
 profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescInput.value = profileDesc.textContent;
-  profileEditModal.classList.add("modal_opened");
+  openPopup(profileEditModal);
 });
 
 profileCloseBtn.addEventListener("click", () => {
-  profileEditModal.classList.remove("modal_opened");
+  closePopup(profileEditModal);
 });
 imageCloseBtn.addEventListener("click", () => {
-  imageModal.classList.remove("modal_opened");
+  closePopup(imageModal);
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
