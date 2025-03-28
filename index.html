@@ -61,22 +61,38 @@
           <span style="color: black">Edit Profile</span>
         </p>
         <form class="modal__form">
+          <!--find a way to stack a class to the name input so that the text turns red whenever not filled-->
           <input
             type="text"
             class="modal__input"
             name="title"
             placeholder="Title"
             id="profile-title-input"
+            maxlength="40"
+            minlength="2"
+            required
           />
+          <span
+            class="__error"
+            id="profile-title-input-error"
+            style="color: red"
+          ></span>
+          <!--put message between spans-->
           <input
             type="text"
             class="modal__input"
             name="description"
             placeholder="Description"
             id="profile-desc-input"
+            minlength="2"
+            maxlength="200"
+            required
           />
-
-          <!-- <button class="modal_button">Save</button> -->
+          <span
+            class="popup__error"
+            id="profile-desc-input-error"
+            style="color: red"
+          ></span>
           <button class="button modal__button" type="submit">Save</button>
         </form>
       </div>
@@ -93,6 +109,9 @@
             name="title"
             placeholder="Title"
             id="card-title-input"
+            maxlength="40"
+            minlength="2"
+            required
           />
           <input
             type="url"
@@ -100,6 +119,7 @@
             name="link"
             placeholder="Image link"
             id="card-link-input"
+            required
           />
 
           <button

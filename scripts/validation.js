@@ -1,20 +1,60 @@
+function showInputError(formEl, inputEl, options) {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.add(options.inputErrorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classList.add("modal__error_visible");
+}
+//error message is defined but not used
+function hideInputError(formEl, inputEl, options) {
+  const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  inputEl.classList.remove(options.inputErrorClass);
+}
+
+function checkInputValidity(formEl, inputEl, options) {
+  if (!inputEl.validity.valid) {
+    showInputError(formEl, inputEl, options);
+  } else {
+    hideInputError(formEl, inputEl, options);
+  }
+}
+
+function setEventListeners(formEl, options) {
+  const { inputSelector } = options;
+  const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
+  const submitButton = formEl.querySelector(".modal__button");
+  console.log(inputEls);
+  inputEls.forEach((inputEl) => {
+    inputEl.addEventListener("input", (e) => {
+      checkInputValidity(formEl, inputEl, options);
+      console.log("code ran -- set event list.");
+      toggleButtonState(inputEls, submitButton);
+    });
+  });
+}
+
 function enableValidation(options) {
-  const formEls = [...document.querySelectorAll("popup__form")]; //popup form is used for simplistics, could be more specific with the targetting.
-  const formEls.forEach((formEl) => {
-    formEl.addEventListene('submit', () => {
-        
-    })
-    
+  console.log("message");
+  const formEls = [...document.querySelectorAll(options.formSelector)]; //popup form is used for simplistics, could be more specific with the targetting.
+  console.log(formEls);
+  formEls.forEach((formEl) => {
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+    setEventListeners(formEl, options);
+    //look for inputs in form
+    //loop through inputs to see if all are valid
+    //if not valid grab validation message and add error class input
+    //if all inputs are valid -- reset error message and anabe button
   });
 }
 
 const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
 
 enableValidation(config);

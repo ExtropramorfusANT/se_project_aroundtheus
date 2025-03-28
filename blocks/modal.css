@@ -51,8 +51,14 @@
   padding: 10px 0 0;
   margin-bottom: 10px;
 }
+
 .modal__input:last-of-type {
   margin-bottom: 0;
+}
+
+.modal__input_type_error {
+  border-bottom-color: red;
+  color: red;
 }
 .modal__button {
   width: 100%;
