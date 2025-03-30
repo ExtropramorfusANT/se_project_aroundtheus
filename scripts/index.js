@@ -111,7 +111,8 @@ function handleEscape(e) {
   // Check to see if the key pressed (look for the event type that lets you know this) is ESCAPE
   // if it is, find the open modal and close it.
   if (e.key === "Escape") {
-    //
+    const openedModal = document.querySelector(".modal_opened");
+    closePopup(openedModal);
   }
 }
 
