@@ -15,18 +15,18 @@ function hasInvalidInput(inputList) {
   return !input.every((inputEl) => inputEl.validity.valid);
 }
 
-//disable button
-
-//enable button
-
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   if (hasInvalidInput) {
-    submitButton.classList.add(inactiveButtonClass); //move this line and the 1 below to its own function.
+    submitButton.classList.add(inactiveButtonClass); 
     submitButton.disabled = true;
     return;
   }
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = true;
+}
+
+function checkInputValidity(inputList) {
+  if 
 }
 
 function setEventListeners(formEl, options) {
