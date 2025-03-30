@@ -85,6 +85,7 @@ const cardImage = document.querySelector(".card__image");
 function closePopup(popup) {
   popup.classList.remove("modal_opened");
   // Remove event listener here
+  document.removeEventListener("keydown", handleEscape);
 }
 
 const imageModal = document.querySelector("#image-modal");
@@ -102,15 +103,14 @@ function openImageModal(link, name) {
 function openPopup(popup) {
   popup.classList.add("modal_opened");
   // Start listening for ESC key (add evt listener), (look for the event type that lets you know this)
-  modalESC = document.querySelector("modal_opened");
-  modalESC.addEventListener("keydown");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function handleEscape(e) {
   e.preventDefault();
   // Check to see if the key pressed (look for the event type that lets you know this) is ESCAPE
   // if it is, find the open modal and close it.
-  if (e.key === "escape") {
+  if (e.key === "Escape") {
     //
   }
 }
