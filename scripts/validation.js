@@ -7,15 +7,26 @@ function showInputError(formEl, inputEl, options) {
 //error message is defined but not used
 function hideInputError(formEl, inputEl, options) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
+  errorMessageEl.textContent = "";
   inputEl.classList.remove(options.inputErrorClass);
 }
 
-function checkInputValidity(formEl, inputEl, options) {
-  if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, options);
-  } else {
-    hideInputError(formEl, inputEl, options);
+function hasInvalidInput(inputList) {
+  return !input.every((inputEl) => inputEl.validity.valid);
+}
+
+//disable button
+
+//enable button
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  if (hasInvalidInput) {
+    submitButton.classList.add(inactiveButtonClass); //move this line and the 1 below to its own function.
+    submitButton.disabled = true;
+    return;
   }
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = true;
 }
 
 function setEventListeners(formEl, options) {
@@ -27,7 +38,7 @@ function setEventListeners(formEl, options) {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
       console.log("code ran -- set event list.");
-      toggleButtonState(inputEls, submitButton);
+      toggleButtonState(inputEls, submitButton, options);
     });
   });
 }

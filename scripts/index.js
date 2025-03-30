@@ -47,6 +47,8 @@ const cardTemplate = document
 const titleInput = document.querySelector("#card-title-input");
 const linkInput = document.querySelector("#card-link-input");
 const cardListEl = document.querySelector(".cards__list");
+
+const popups = document.querySelectorAll(".modal");
 /*Function*/
 
 function getCardElement(cardData) {
@@ -82,6 +84,7 @@ const cardImage = document.querySelector(".card__image");
 
 function closePopup(popup) {
   popup.classList.remove("modal_opened");
+  // Remove event listener here
 }
 
 const imageModal = document.querySelector("#image-modal");
@@ -98,6 +101,18 @@ function openImageModal(link, name) {
 
 function openPopup(popup) {
   popup.classList.add("modal_opened");
+  // Start listening for ESC key (add evt listener), (look for the event type that lets you know this)
+  modalESC = document.querySelector("modal_opened");
+  modalESC.addEventListener("keydown");
+}
+
+function handleEscape(e) {
+  e.preventDefault();
+  // Check to see if the key pressed (look for the event type that lets you know this) is ESCAPE
+  // if it is, find the open modal and close it.
+  if (e.key === "escape") {
+    //
+  }
 }
 
 //Event handler
@@ -107,6 +122,13 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDesc.textContent = profileDescInput.value;
   closePopup(profileEditModal);
+}
+
+function handlePopupClose(e) {
+  if (e.target.classList.contains("modal")) {
+    const currentModal = document.querySelector(".modal_opened");
+    closePopup(currentModal);
+  }
 }
 
 addCardForm.addEventListener("submit", (event) => {
@@ -152,3 +174,13 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardListEl.prepend(cardElement);
 });
+
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", handlePopupClose);
+});
+
+// const modalBackground = document.querySelector(".modal");
+
+// modalBackground.addEventListener("click", () => {
+//   closePopup(document.querySelector("modalBackground"));
+// });
