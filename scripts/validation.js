@@ -12,21 +12,23 @@ function hideInputError(formEl, inputEl, options) {
 }
 
 function hasInvalidInput(inputList) {
-  return !input.every((inputEl) => inputEl.validity.valid);
+  return !inputList.every((inputEl) => inputEl.validity.valid);
 }
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  if (hasInvalidInput) {
+  if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
+    console.log("invalid");
     return;
   }
   submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = true;
+  submitButton.disabled = false;
+  console.log("here");
 }
 
-function checkInputValidity(inputList) {
-  if (!inputEls.validity.valid) {
+function checkInputValidity(formEls, inputEl, options) {
+  if (!inputEl.validity.valid) {
     showInputError(formEls, inputEl, options);
   } else {
     hideInputError(formEls, inputEl, options);
@@ -38,6 +40,7 @@ function setEventListeners(formEl, options) {
   const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
   const submitButton = formEl.querySelector(".modal__button");
   console.log(inputEls);
+  toggleButtonState(inputEls, submitButton, options);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);

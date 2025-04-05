@@ -80,9 +80,18 @@
   margin-top: 48px;
 }
 
+.modal__button_disabled {
+  background-color: white;
+  color: #cccccc;
+  border: solid;
+  border-width: 1px;
+  border-color: #cccccc;
+}
+
 .modal__button:hover {
   background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+  border: none;
 }
 
 .modal__close {

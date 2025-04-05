@@ -127,8 +127,7 @@ function handleProfileEditSubmit(e) {
 
 function handlePopupClose(e) {
   if (e.target.classList.contains("modal")) {
-    const currentModal = document.querySelector(".modal_opened");
-    closePopup(currentModal);
+    closePopup(e.currentTarget);
   }
 }
 
