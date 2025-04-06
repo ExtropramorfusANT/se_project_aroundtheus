@@ -1,4 +1,6 @@
 function showInputError(formEl, inputEl, options) {
+  console.log("=============");
+  console.log(inputEl.id);
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;

@@ -64,6 +64,9 @@
   color: red;
 }
 
+.modal__error_visible {
+}
+
 .modal__button {
   width: 100%;
   height: 50px;
