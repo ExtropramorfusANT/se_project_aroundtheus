@@ -64,10 +64,15 @@
   color: red;
   font-size: 12px;
   visibility: visible;
+  position: absolute;
 }
 
 .modal__error_visible {
   visibility: visible;
+}
+
+.modal__label {
+  position: relative;
 }
 
 .modal__button {
