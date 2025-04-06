@@ -11,6 +11,7 @@ function hideInputError(formEl, inputEl, options) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = "";
   inputEl.classList.remove(options.inputErrorClass);
+  errorMessageEl.classList.remove(options.errorClass);
 }
 
 function hasInvalidInput(inputList) {

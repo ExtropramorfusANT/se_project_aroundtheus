@@ -62,9 +62,12 @@
 
 .modal__error {
   color: red;
+  font-size: 12px;
+  visibility: visible;
 }
 
 .modal__error_visible {
+  visibility: visible;
 }
 
 .modal__button {
