@@ -4,7 +4,7 @@ function showInputError(formEl, inputEl, options) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
-  errorMessageEl.classList.add("modal__error_visible");
+  errorMessageEl.classList.add(options.errorClass);
 }
 //error message is defined but not used
 function hideInputError(formEl, inputEl, options) {
@@ -41,7 +41,7 @@ function checkInputValidity(formEls, inputEl, options) {
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
-  const submitButton = formEl.querySelector(".modal__button");
+  const submitButton = formEl.querySelector(submitButtonSelector);
   console.log(inputEls);
   toggleButtonState(inputEls, submitButton, options);
   inputEls.forEach((inputEl) => {
