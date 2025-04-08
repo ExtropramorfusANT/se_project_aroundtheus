@@ -41,7 +41,7 @@ function checkInputValidity(formEls, inputEl, options) {
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
-  const submitButton = formEl.querySelector(submitButtonSelector);
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
   console.log(inputEls);
   toggleButtonState(inputEls, submitButton, options);
   inputEls.forEach((inputEl) => {
