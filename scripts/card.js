@@ -1,14 +1,19 @@
-class Card {
-  constructor(data, cardSelector, handleImageClick) {
-    // assign each of the parameters to `this` as private fields
-    // ...
-    this._handeImageClick = handleImageClick;
+export default class Card {
+  constructor({ name, link }) {
+    console.log({ name, link }, cardSelector);
+    this._name = name;
+    this._link = link;
+    this._cardSelector = cardSelector;
   }
 
   _setEventListeners() {
-    // ...
-    this._cardImageElement.addEventListener("click", () => {
-      this._handleImageClick(this);
-    });
+    alert("hoorah");
+  }
+
+  getView() {
+    //get card view
+    //set event listener
+    this._setEventListeners;
+    //retru the card
   }
 }
