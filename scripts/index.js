@@ -1,3 +1,4 @@
+import FormValidator from "./FormValidator.js";
 import Card from "./card.js";
 
 const initialCards = [
@@ -66,6 +67,29 @@ const cardListEl = document.querySelector(".cards__list");
 
 const popups = document.querySelectorAll(".modal");
 /*Function*/
+
+const cardSelector = "#card-template";
+
+const validationSettings = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const profileEditForm = profileEditForm.querySelector(".popup__form");
+const addCardFormElement = addCardFormElement.querySelector(".popup__form");
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  profileEditForm
+);
+
+const addFormValidator = new FormValidator(
+  validationSettings,
+  addCardFormElement
+);
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);

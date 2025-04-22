@@ -6,6 +6,13 @@ export default class Card {
     this._cardSelector = cardSelector;
   }
 
+  _getTemplate({
+    return document
+    .querySelector(this._cardSelector)
+    .content.querySelector(".card")
+    .cloneNode(True);
+  })
+
   _setEventListeners() {
     alert("hoorah");
     this._cardElement

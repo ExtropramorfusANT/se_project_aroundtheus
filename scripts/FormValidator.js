@@ -50,3 +50,5 @@ class FormValidator {
 
 const editFormValidator = new FormValidator();
 editFormValidator.enableValidation();
+
+export default FormValidator;
