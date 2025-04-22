@@ -194,9 +194,3 @@ initialCards.forEach((cardData) => {
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", handlePopupClose);
 });
-
-// const modalBackground = document.querySelector(".modal");
-
-// modalBackground.addEventListener("click", () => {
-//   closePopup(document.querySelector("modalBackground"));
-// });
