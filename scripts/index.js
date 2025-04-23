@@ -78,18 +78,22 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const profileEditForm = profileEditForm.querySelector(".popup__form");
-const addCardFormElement = addCardFormElement.querySelector(".popup__form");
+//const profileEditForm = profileEditForm.querySelector(".popup__form");
+//onst addCardFormElement = addCardFormElement.querySelector(".popup__form");
 
 const editFormValidator = new FormValidator(
   validationSettings,
   profileEditForm
 );
 
+editFormValidator.enableValidation();
+
 const addFormValidator = new FormValidator(
   validationSettings,
   addCardFormElement
 );
+
+addFormValidator.enableValidation();
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
