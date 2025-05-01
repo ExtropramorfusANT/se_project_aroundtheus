@@ -11,12 +11,11 @@ export default class Card {
     const getCardTemplate = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
-      .cloneNode(True);
+      .cloneNode(true);
     return getCardTemplate;
   }
 
   _setEventListeners() {
-    alert("hoorah");
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
@@ -43,12 +42,10 @@ export default class Card {
 
   getView() {
     //get card view
-    this._cardElement = document
-      .querySelector(this._cardSelector)
-      .content.querySelector(".card")
-      .cloneNode(true);
+    this._cardElement = this._getTemplate();
     //set event listener
     this._setEventListeners;
     //retru the card
+    return this._cardElement;
   }
 }

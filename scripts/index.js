@@ -34,10 +34,23 @@ const initialCards = [
 const cardData = {
   name: "Yosemite Valley",
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+
+  name: "Lake Louise",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+
+  name: "Bald Mountains",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
+
+  name: "Latemar",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+
+  name: "Vanoise National Park",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+
+  name: "Lago Di Braise",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
 };
 
-const card = new Card(cardData, "#card-template");
-card.getView();
 //-----------------//
 // new sect from vid//
 //------------------//
@@ -95,28 +108,33 @@ const addFormValidator = new FormValidator(
 
 addFormValidator.enableValidation();
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__image");
+// function getCardElement(cardData) {
+//   const cardElement = cardTemplate.cloneNode(true);
+//   const cardImage = cardElement.querySelector(".card__image");
 
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-  cardTitleEl.textContent = cardData.name;
-  cardImage.src = cardData.link;
-  cardImage.alt = cardData.name;
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-  cardImage.addEventListener("click", () => {
-    openImageModal(cardData.link, cardData.name);
-  });
+//   const cardTitleEl = cardElement.querySelector(".card__title");
+//   const likeButton = cardElement.querySelector(".card__like-button");
+//   const deleteButton = cardElement.querySelector(".card__delete-button");
+//   deleteButton.addEventListener("click", () => {
+//     cardElement.remove();
+//   });
+//   cardTitleEl.textContent = cardData.name;
+//   cardImage.src = cardData.link;
+//   cardImage.alt = cardData.name;
+//   likeButton.addEventListener("click", () => {
+//     likeButton.classList.toggle("card__like-button_active");
+//   });
+//   cardImage.addEventListener("click", () => {
+//     openImageModal(cardData.link, cardData.name);
+//   });
 
-  return cardElement;
-}
+//   return cardElement;
+// }
+
+//reminder move everything over to getview()
+
+const card = new Card(cardData, "#card-template");
+card.getView();
 
 const cardTitleInput = addCardFormElement.querySelector(
   ".modal__input_type_title"
@@ -175,21 +193,22 @@ function handlePopupClose(e) {
   }
 }
 
-addCardForm.addEventListener("submit", (event) => {
+function handleAddCardSubmit(event) {
   event.preventDefault();
-
   const cardData = {
     name: titleInput.value,
     link: linkInput.value,
   };
 
-  const newCard = getCardElement(cardData);
+  const newCard = new Card(cardData, "#card-template");
   cardListEl.prepend(newCard);
 
   // Reset the form
   addCardForm.reset();
   closePopup(addCardModal);
-});
+}
+
+addCardForm.addEventListener("submit", handleAddCardSubmit);
 
 addCardButton.addEventListener("click", () => {
   openPopup(addCardModal);
@@ -215,10 +234,6 @@ imageCloseBtn.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
+  const cardElement = new Card(cardData, "#card-template");
   cardListEl.prepend(cardElement);
-});
-
-popups.forEach((popup) => {
-  popup.addEventListener("mousedown", handlePopupClose);
 });
