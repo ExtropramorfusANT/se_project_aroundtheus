@@ -27,6 +27,7 @@ export default class Card {
       .addEventListener("click", () => {
         this._handleDeleteCard();
       });
+    this._cardElement.querySelector();
   }
 
   _handleDeleteCard() {
@@ -52,7 +53,7 @@ export default class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-    this._setEventListeners();
+    this._setEventListeners("click", openImageModal()); //this._setEventListeners("click", openImageModal());
     return this._cardElement;
   }
 }
