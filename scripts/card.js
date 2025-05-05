@@ -41,11 +41,18 @@ export default class Card {
   }
 
   getView() {
-    //get card view
     this._cardElement = this._getTemplate();
-    //set event listener
-    this._setEventListeners;
-    //retru the card
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
+    this._cardImage = this._cardElement.querySelector(".card__image");
+    this._cardTitle = this._cardElement.querySelector(".card__title");
+
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardTitle.textContent = this._name;
+    this._setEventListeners();
     return this._cardElement;
   }
 }

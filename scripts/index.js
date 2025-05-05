@@ -234,6 +234,6 @@ imageCloseBtn.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-  const cardElement = new Card(cardData, "#card-template");
+  const cardElement = new Card(cardData, "#card-template").getView();
   cardListEl.prepend(cardElement);
 });
