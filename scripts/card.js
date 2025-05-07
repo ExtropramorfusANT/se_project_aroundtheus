@@ -28,7 +28,6 @@ export default class Card {
       .addEventListener("click", () => {
         this._handleDeleteCard();
       });
-    this._cardElement.querySelector();
 
     this._cardImage.addEventListener("click", () => {
       this._openImageModal(this._link, this._name);
