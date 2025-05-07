@@ -1,9 +1,10 @@
 export default class Card {
-  constructor({ name, link }, cardSelector) {
+  constructor({ name, link }, cardSelector, openImageModal) {
     console.log({ name, link }, cardSelector);
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
+    this._openImageModal = openImageModal;
   }
 
   _getTemplate() {
@@ -28,6 +29,10 @@ export default class Card {
         this._handleDeleteCard();
       });
     this._cardElement.querySelector();
+
+    this._cardImage.addEventListener("click", () => {
+      this._openImageModal(this._link, this._name);
+    });
   }
 
   _handleDeleteCard() {
@@ -53,7 +58,7 @@ export default class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-    this._setEventListeners("click", openImageModal()); //this._setEventListeners("click", openImageModal());
+    this._setEventListeners();
     return this._cardElement;
   }
 }

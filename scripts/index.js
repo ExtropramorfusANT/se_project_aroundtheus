@@ -200,7 +200,7 @@ function handleAddCardSubmit(event) {
     link: linkInput.value,
   };
 
-  const newCard = new Card(cardData, "#card-template");
+  const newCard = new Card(cardData, "#card-template", openImageModal);
   cardListEl.prepend(newCard);
 
   // Reset the form
@@ -234,6 +234,10 @@ imageCloseBtn.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-  const cardElement = new Card(cardData, "#card-template").getView();
+  const cardElement = new Card(
+    cardData,
+    "#card-template",
+    openImageModal
+  ).getView();
   cardListEl.prepend(cardElement);
 });
