@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./card.js";
+import FormValidator from "../components/formValidator.js";
+import Card from "../components/card.js";
 
 const initialCards = [
   {
@@ -108,31 +108,6 @@ const addFormValidator = new FormValidator(
 
 addFormValidator.enableValidation();
 
-// function getCardElement(cardData) {
-//   const cardElement = cardTemplate.cloneNode(true);
-//   const cardImage = cardElement.querySelector(".card__image");
-
-//   const cardTitleEl = cardElement.querySelector(".card__title");
-//   const likeButton = cardElement.querySelector(".card__like-button");
-//   const deleteButton = cardElement.querySelector(".card__delete-button");
-//   deleteButton.addEventListener("click", () => {
-//     cardElement.remove();
-//   });
-//   cardTitleEl.textContent = cardData.name;
-//   cardImage.src = cardData.link;
-//   cardImage.alt = cardData.name;
-//   likeButton.addEventListener("click", () => {
-//     likeButton.classList.toggle("card__like-button_active");
-//   });
-//   cardImage.addEventListener("click", () => {
-//     openImageModal(cardData.link, cardData.name);
-//   });
-
-//   return cardElement;
-// }
-
-//reminder move everything over to getview()
-
 const card = new Card(cardData, "#card-template");
 card.getView();
 
@@ -164,13 +139,10 @@ function openImageModal(link, name) {
 
 function openPopup(popup) {
   popup.classList.add("modal_opened");
-  // Start listening for ESC key (add evt listener), (look for the event type that lets you know this)
   document.addEventListener("keydown", handleEscape);
 }
 
 function handleEscape(e) {
-  // Check to see if the key pressed (look for the event type that lets you know this) is ESCAPE
-  // if it is, find the open modal and close it.
   if (e.key === "Escape") {
     e.preventDefault();
     const openedModal = document.querySelector(".modal_opened");
