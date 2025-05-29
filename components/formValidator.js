@@ -42,10 +42,25 @@ class FormValidator {
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        checkInputValidity(this._form, inputElement, rest);
-        toggleButtonState(inputList, buttonElement, this._inactiveButtonClass);
+        this._checkInputValidity(inputElement);
+        this._toggleButtonState();
       });
     });
+  }
+
+  _checkInputValidity(inputElement) {
+    const errorMessageEl = this._form.querySelector(
+      `#${inputElement.id}-error`
+    );
+    if (!inputElement.validity.valid) {
+      inputElement.classList.add(this._inputErrorClass);
+      errorMessageEl.textContent = inputElement.validationMessage;
+      errorMessageEl.classList.add(this._errorClass);
+    } else {
+      inputElement.classList.remove(this._inputErrorClass);
+      errorMessageEl.textContent = "";
+      errorMessageEl.classList.remove(this._errorClass);
+    }
   }
 
   enableValidation() {
