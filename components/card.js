@@ -40,7 +40,7 @@ export default class Card {
   }
 
   _handleLikeIcon() {
-    this._likeButton.classList.toggle("card__like-button_is-active");
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   getView() {
