@@ -140,6 +140,7 @@ function openImageModal(link, name) {
 function openPopup(popup) {
   popup.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
+  //add modal closing functionality, the setup is already made just add it.
 }
 
 function handleEscape(e) {
@@ -165,6 +166,15 @@ function handlePopupClose(e) {
   }
 }
 
+function createCard(cardData) {
+  const cardElement = new Card(
+    cardData,
+    "#card-template",
+    openImageModal
+  ).getView();
+  return cardElement;
+}
+
 function handleAddCardSubmit(event) {
   event.preventDefault();
   const cardData = {
@@ -172,7 +182,8 @@ function handleAddCardSubmit(event) {
     link: linkInput.value,
   };
 
-  const newCard = new Card(cardData, "#card-template", openImageModal);
+  const newCard = new Card(cardData, "#card-template", openImageModal); // check for missins instance
+  console.log(newCard);
   cardListEl.prepend(newCard);
 
   // Reset the form
@@ -206,10 +217,5 @@ imageCloseBtn.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
-  const cardElement = new Card(
-    cardData,
-    "#card-template",
-    openImageModal
-  ).getView();
-  cardListEl.prepend(cardElement);
-});
+  cardListEl.prepend(createCard(cardData));
+}); // check fir missing instance
