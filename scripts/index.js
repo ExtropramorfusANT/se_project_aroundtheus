@@ -152,6 +152,13 @@ function handleEscape(e) {
   }
 }
 
+function mousedownHandler(e) {
+  if (e.key === "mousedown") {
+    e.preventDefault();
+    const openedModal = document.querySelector(".modal_opened");
+    closePopup(openedModal);
+  }
+}
 //add event listener to close popup click "mousedown"
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", handlePopupClose);
