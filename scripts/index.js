@@ -140,6 +140,7 @@ function openImageModal(link, name) {
 function openPopup(popup) {
   popup.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
+  document.addEventListener("mousedown", mousedownHandler);
   //add modal closing functionality, the setup is already made just add it.
 }
 
@@ -150,6 +151,11 @@ function handleEscape(e) {
     closePopup(openedModal);
   }
 }
+
+//add event listener to close popup click "mousedown"
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", handlePopupClose);
+});
 
 //Event handler
 function handleProfileEditSubmit(e) {
@@ -181,10 +187,12 @@ function handleAddCardSubmit(event) {
     name: titleInput.value,
     link: linkInput.value,
   };
+  console.log("CARD DATA", cardData);
 
   const newCard = new Card(cardData, "#card-template", openImageModal); // check for missins instance
+  const cardToAppend = newCard.getView();
   console.log(newCard);
-  cardListEl.prepend(newCard);
+  cardListEl.prepend(cardToAppend);
 
   // Reset the form
   addCardForm.reset();
