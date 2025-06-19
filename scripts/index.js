@@ -1,5 +1,5 @@
-import FormValidator from "../components/formValidator.js";
-import Card from "../components/card.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
   {
@@ -91,9 +91,6 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-//const profileEditForm = profileEditForm.querySelector(".popup__form");
-//onst addCardFormElement = addCardFormElement.querySelector(".popup__form");
-
 const editFormValidator = new FormValidator(
   validationSettings,
   profileEditForm
@@ -141,7 +138,6 @@ function openPopup(popup) {
   popup.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
   document.addEventListener("mousedown", mousedownHandler);
-  //add modal closing functionality, the setup is already made just add it.
 }
 
 function handleEscape(e) {
@@ -159,7 +155,7 @@ function mousedownHandler(e) {
     closePopup(openedModal);
   }
 }
-//add event listener to close popup click "mousedown"
+
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", handlePopupClose);
 });
@@ -233,4 +229,4 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
   cardListEl.prepend(createCard(cardData));
-}); // check fir missing instance
+});
