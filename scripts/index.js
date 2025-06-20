@@ -120,6 +120,7 @@ function closePopup(popup) {
   popup.classList.remove("modal_opened");
   // Remove event listener here
   document.removeEventListener("keydown", handleEscape);
+  document.removeEventListener("mousedown", mousedownHandler);
 }
 
 const imageModal = document.querySelector("#image-modal");
@@ -192,10 +193,9 @@ function handleAddCardSubmit(event) {
   };
   console.log("CARD DATA", cardData);
 
-  const newCard = new Card(cardData, "#card-template", openImageModal); // check for missins instance
-  const cardToAppend = newCard.getView();
-  console.log(newCard);
+  const cardToAppend = createCard(cardData); // this way
   cardListEl.prepend(cardToAppend);
+  console.log(newCard);
 
   // Reset the form
   addCardForm.reset();
