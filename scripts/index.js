@@ -120,7 +120,6 @@ function closePopup(popup) {
   popup.classList.remove("modal_opened");
   // Remove event listener here
   document.removeEventListener("keydown", handleEscape);
-  document.removeEventListener("mousedown", mousedownHandler);
 }
 
 const imageModal = document.querySelector("#image-modal");
@@ -138,19 +137,10 @@ function openImageModal(link, name) {
 function openPopup(popup) {
   popup.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
-  document.addEventListener("mousedown", mousedownHandler);
 }
 
 function handleEscape(e) {
   if (e.key === "Escape") {
-    e.preventDefault();
-    const openedModal = document.querySelector(".modal_opened");
-    closePopup(openedModal);
-  }
-}
-
-function mousedownHandler(e) {
-  if (e.key === "mousedown") {
     e.preventDefault();
     const openedModal = document.querySelector(".modal_opened");
     closePopup(openedModal);
