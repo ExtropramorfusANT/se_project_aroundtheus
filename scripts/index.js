@@ -185,7 +185,7 @@ function handleAddCardSubmit(event) {
 
   const cardToAppend = createCard(cardData); // this way
   cardListEl.prepend(cardToAppend);
-  console.log(newCard);
+  console.log(cardData);
 
   // Reset the form
   addCardForm.reset();
